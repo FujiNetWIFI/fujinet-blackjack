@@ -26,3 +26,8 @@ loader runs `BLKJACK2.BIN` on a CoCo 1/2 and `BLKJACK3.BIN` on a CoCo 3.
 
 The client connects to `https://blackjack.carr-designs.com/`, or to the
 server picked in the FujiNet lobby (lobby key 0x0C).
+
+## Possible ports
+
+fujinet-lib also supports the C64, MSX, Atari Lynx, Dragon, Heathkit H89
+and Tesla PMD 85, so those are candidates for further ports.
