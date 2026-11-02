@@ -98,21 +98,19 @@ static void showHelpScreen() {
 }
 
 static void welcomeActionVerifyServerDetails() {
-  // The lobby stores "server?table=..."; keep only the server
+  // The lobby stores "server?table=..."; the query skips table selection
   read_appkey(AK_LOBBY_CREATOR_ID, AK_LOBBY_APP_ID, AK_LOBBY_KEY_SERVER, tempBuffer);
   i = (unsigned char)strlen(tempBuffer);
   if (i) {
     while (--i) {
       if (tempBuffer[i] == '?') {
+        strcpy(query, tempBuffer + i);
         tempBuffer[i] = 0;
         break;
       }
     }
     strcpy(serverEndpoint, tempBuffer);
   }
-
-  // Always pick a table at launch
-  query[0] = 0;
 }
 
 static bool inputFieldCycle(uint8_t x, uint8_t y, uint8_t max, char *buffer) {
